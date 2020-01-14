@@ -1,0 +1,52 @@
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<% provide(:title,"Home") %>
+<div class="container-fluid">
+	<div class="row">
+		<div id="cf">
+		  <%= image_tag("home1.jpg", alt: "watercooled PC", class: "middle")%>
+		  <%= image_tag("games.jpg", alt: "banner", class: "top")%>
+		  <%= image_tag("home2.jpg", alt: "watercooled PC", class: "bottom")%>
+		  <%= image_tag("home3.jpg", alt: "watercooled PC", class: "middle")%>
+		</div>
+		<div class="snippet">
+			<div class="snippet-content">
+				<p>
+					This website was created as a means to help beginners to pick their parts to build their own gaming PC. Prices and parts are regularly updated depending on the current situation
+				</p>
+				<p>
+					BuildMyPc aims to simplify things by providing a parts list to start you off, which can then be customised to your particular needs
+				</p>
+				<a href="#Link-to-last" class="btn btn-default btn-lg">Get Started</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="separator" id="Link-to-last"></div>
+<div class="container-fluid" id="home-container">
+  <div class="row" >
+    <div class="home-image"><%= image_tag("homedecoredited.jpg", alt: "Graphic Image")%>
+        <p class="inner-text">Get started by browsing thorugh the list of Products we have to offer</p>
+        <a href="<%=products_path%>" class="btn btn-default inner-button">Products</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="home-image"><%= image_tag("homedecoredited.jpg", alt: "Graphic Image")%>
+        <p class="inner-text">Or if you chose to pick among the Categories</p>
+        <a class="btn btn-default inner-button" type="button" data-toggle="collapse" data-target="#hide-category">Categories</a>
+        <div id="hide-category" class="collapse">
+			<a href="<%=product_type_path(1)%>">Ram</a>
+			<a href="<%=product_type_path(1)%>">Graphic Card</a>
+			<a href="<%=product_type_path(1)%>">Mother Board</a>
+			<a href="<%=product_type_path(1)%>">CPU</a>
+			<a href="<%=product_type_path(1)%>">Cabinet</a>
+			<a href="<%=product_type_path(1)%>">Pre-Built</a>
+			<a href="<%=product_type_path(1)%>">Sound Card</a>
+			<a href="<%=product_type_path(1)%>">Hard Disk</a>
+			<a href="<%=product_type_path(1)%>">Hard Disk</a>
+			<a href="<%=product_type_path(1)%>">Hard Disk</a>
+			<a href="<%=product_type_path(1)%>">Hard Disk</a>
+  	    </div>
+	</div>
+  </div>
+</div>

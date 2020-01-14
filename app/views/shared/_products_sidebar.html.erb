@@ -1,0 +1,22 @@
+<div class="row">
+	<div id="products_sidebar">
+		<div class="fixed">
+			<div class="image-container" type="button" data-toggle="collapse" data-target="#clickme"><%= image_tag("Iconcategories.png", alt: "Icon", class: "icon")%></div>
+				<div id="clickme" class="collapse">
+				<h5>CATERGORIES</h5>
+				<% products.each do |type| %>				
+						<li><%= link_to type.name, product_type_path(type)%>	<!-- go to product_type controller show action-->
+						<% if logged_in? && current_user.admin? %>
+							<%= link_to "Edit", edit_product_type_path(type) %>	<!-- go to product_type controller edit action -->
+							<%= link_to "Delete", product_type_path(type) , method: :delete, data: { confirm: "Are You Sure?" }%>		<!-- go to product_type controller delete action and a pop to confirm the action -->
+						<% end %>
+						</li>	
+				<% end %>
+				<h5><%= link_to "ALL PRODUCTS", products_path %></h5>
+				<% if logged_in? && current_user.admin? %>
+					<h5><%= link_to "ADD TYPE", new_product_type_path %></h5><!-- All types of products listed for admin's ease -->
+				<% end %>			
+			</div>
+		</div>
+	</div>
+</div>

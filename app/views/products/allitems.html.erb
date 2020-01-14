@@ -1,0 +1,31 @@
+<% provide(:title,"Add") %>
+
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  	<h3>ADD ANY PRODUCT</h3>
+	<%= form_for(@product, url: products_path, html: {multipart: true}) do |f|%>
+		<%= render 'shared/error_messages', object: f.object %>
+
+		<%= f.label :name %>
+		<%= f.text_field :name, class: 'form-control' %>
+
+		<%= f.label :type %>
+		<%= f.collection_select :value, ProductType.all, :value, :name, prompt: true, selected: @product.value %>
+
+		<%= f.label :description %>
+		<%= f.text_field :description, class: 'form-control' %>
+
+		<%= f.label :specification %>
+		<%= f.text_field :specification, class: 'form-control' %>
+
+		<%= f.label :price %>
+		<%= f.number_field :price, class: 'form-control' %>
+
+		<%= f.hidden_field(:image_cache) %>
+		<%= f.file_field(:image)%>
+
+		<%= f.submit "Create", class: 'btn btn-primary' %>
+	<% end %>
+  </div>
+</div>

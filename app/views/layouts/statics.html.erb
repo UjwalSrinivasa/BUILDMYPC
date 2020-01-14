@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'layouts/title' %>
+    <%= render 'layouts/rails_defaults'%>
+    <%= render 'layouts/shim' %>
+    <%= render 'layouts/header' %>
+  </head>
+  <body>
+    <%= render 'layouts/flash' %>
+        <%= yield %>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

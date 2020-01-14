@@ -1,0 +1,29 @@
+<% provide(:title,"Add Product") %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  	<h3>ADD NEW PRODUCT</h3>
+	<%= form_for(@product, url: products_path(@product, val: "true"), html: { multipart: true }) do |f|%>		<!-- #multipart is used when there is file upload in the form.-->
+	    <%= render 'shared/error_messages', object: f.object %>
+		
+		<%= f.label :name %>
+		<%= f.text_field :name, class: 'form-control' %>
+
+		<%= f.hidden_field :value, :value => params[:value] %>							<!-- # Used to hide the value attribute and specifying the value to the form( so that the type of product cannot be changed or added while submitting )-->
+
+		<%= f.label :description %>
+		<%= f.trix_editor :description %>
+
+		<%= f.label :specification %>
+		<%= f.trix_editor :specification %>
+
+		<%= f.label :price %>
+		<%= f.number_field :price, class: 'form-control' %>
+
+		<%= f.hidden_field(:image_cache) %>
+		<%= f.file_field(:image) %>
+
+		<%= f.submit "Create", class: 'btn btn-primary' %>
+	<% end %>
+  </div>
+</div>

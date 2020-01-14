@@ -1,0 +1,20 @@
+<% provide(:title,"All Products") %>
+<% provide(:val,"false") %>
+
+
+<div class="bg"><%= image_tag("allproducts.jpg", alt: "Graphic Image", class: "slide-image img-responsive")%>
+	<div class="jumbotron">
+		<h1>We offer a lot</h1>
+		<p class="lead">The choice is yours</p>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<% if logged_in? && current_user.admin? %>
+			<h2><%= link_to "Create Product Items", products_allitems_path %></h2>
+		<% end %>
+	</div>
+</div>
+
+<%= render 'layouts/display_page' %>

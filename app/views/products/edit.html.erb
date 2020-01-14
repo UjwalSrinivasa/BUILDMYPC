@@ -1,0 +1,32 @@
+<% provide(:title,"Edit") %>
+
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+	<%= form_for(@product, url: product_path(@product,val: params[:val]), method: :patch, html: { multipart: true }) do |f|%>	<!-- Cloudinary specified to implement image -->
+      	<h3>EDIT PRODUCT!</h3>
+      	<%= render 'shared/error_messages', object: f.object %>		
+		
+		<%= f.label :name %>
+		<%= f.text_field :name, class: 'form-control' %>
+
+		<%= f.label :type %>
+		<%= f.collection_select :value, ProductType.all, :value, :name, prompt: true, selected: @product.value %>	<!-- syntax for collection_select :foreign_key, Model(having the name).all, :primary_key, :field to show in the selector, propmt: select any, options (here using selected will show the category selected each time edit is called) -->
+
+
+		<%= f.label :description %>
+		<%= f.trix_editor :description %>
+
+		<%= f.label :specification %>
+		<%= f.trix_editor :specification %>
+
+		<%= f.label :price %>
+		<%= f.number_field :price, class: 'form-control' %>
+		
+		<%= f.hidden_field(:image_cache) %>			<!-- Cloudinary way of adding images -->
+		<%= f.file_field(:image) %>
+
+		<%= f.submit "Update", class: 'btn btn-primary' %>
+	<% end %>
+  </div>
+</div>

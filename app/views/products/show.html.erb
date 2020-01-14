@@ -1,0 +1,33 @@
+<div class="row">
+  	<div class="col-md-6 col-xs-12">
+    	<div class="disp-image">
+    		<%= image_tag(@product.image_url(:large)) %>
+    	</div>
+ 	</div>
+  	<div class="col-md-6 col-xs-12">	
+		<div class="name">
+			<strong><%= @product.name %></strong>
+		</div>
+ 	</div>
+ 	<div class="col-md-6 col-xs-12">
+    	<div class="price">
+    		<strong>Rs:  <%= @product.price %>\-</strong>
+    	</div>
+    </div>
+	<div class="col-md-6 col-xs-12">	
+		<div class="description">
+			<span>Description</span><%= sanitize @product.description, tags: %w(strong em p br div ul ol li) %>
+		</div>
+	</div>
+	<div class="col-md-12 col-xs-12">
+    	<div class="specification">
+    		<span>Specification</span><%= sanitize @product.specification, tags: %w(strong em p br div ul ol li) %>
+    	</div>
+  	</div>
+</div>
+
+
+
+
+
+<!-- col-md-offset-3  ( makes the column move 3 columns to the right, but if there is alredy a column it jumps down ) --> 

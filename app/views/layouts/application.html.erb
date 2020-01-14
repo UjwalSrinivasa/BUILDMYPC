@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'layouts/title' %>
+    <%= render 'layouts/rails_defaults'%>
+    <%= render 'layouts/shim' %>
+    <%= render 'layouts/header' %>
+  </head>
+  <body>
+    <%= render 'layouts/flash' %>
+      <div class="container content">
+        <%= yield %>
+      </div>
+    <%= products_sidebar %>
+  </body>
+  <%= render 'layouts/footer' %>
+</html>

@@ -1,0 +1,18 @@
+<% provide(:title,"#{@type.name}") %>
+<% provide(:val,"true") %>
+
+<div class="bg"><%= image_tag("#{@type.name}.jpg", alt: "Graphic Image", class: "slide-image img-responsive")%>
+	<div class="jumbotron">
+		<h1><%= @type.name %>S</h1>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<% if logged_in? && current_user.admin? %>
+			<h2><%= link_to "Create New Products", new_product_path(value: @type.value)%></h2>
+		<% end %>
+	</div>
+</div>
+
+<%= render 'layouts/display_page' %>

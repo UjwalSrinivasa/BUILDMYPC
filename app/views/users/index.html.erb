@@ -1,0 +1,12 @@
+<% provide(:title,"Users") %>
+
+<div class="container-fluid">
+  <%= will_paginate %>
+</div>
+
+<h3>USERS LIST</h3>
+  	<%= render @users %>             	<!-- creates a looping statement like @users.each do |user| and links to the _user.html.erb partial -->
+
+<div class="container-fluid">
+  <%= will_paginate %>
+</div>

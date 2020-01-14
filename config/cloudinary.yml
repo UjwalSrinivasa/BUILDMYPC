@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: ql3r
+  api_key: '279213872585225'
+  api_secret: x84g3LgYb2s5XWA3MUVRc5ZQeVs
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: ql3r
+  api_key: '279213872585225'
+  api_secret: x84g3LgYb2s5XWA3MUVRc5ZQeVs
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: ql3r
+  api_key: '279213872585225'
+  api_secret: x84g3LgYb2s5XWA3MUVRc5ZQeVs
+  enhance_image_tag: true
+  static_image_support: false
